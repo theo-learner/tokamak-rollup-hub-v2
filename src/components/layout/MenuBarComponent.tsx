@@ -50,6 +50,7 @@ export default function MenuBarComponent({
             display={"flex"}
             alignItems={"center"}
             justifyContent={"center"}
+            gap={"6px"}
             key={item.label}
             color={"#2E2E3A"}
             fontSize={isMenuOpen ? "30px" : "15px"}
@@ -68,6 +69,21 @@ export default function MenuBarComponent({
             _hover={{ color: "#0070ED" }}
             zIndex={3000}
           >
+            {item.isNew && (
+              <Text
+                as="span"
+                bgColor={"#FF4B4B"}
+                color={"white"}
+                fontSize={isMenuOpen ? "14px" : "10px"}
+                fontWeight={700}
+                px={"6px"}
+                py={"2px"}
+                borderRadius={"4px"}
+                lineHeight={"normal"}
+              >
+                NEW
+              </Text>
+            )}
             {item.label}
           </Text>
         ))}
